@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  bind9:
+    image: internetsystemsconsortium/bind9:9.18
+    container_name: bind9
+    ports:
+      - "54:53/tcp"
+      - "54:53/udp"
+      - "127.0.0.1:953:953/tcp" # Puerto de control de BIND
+    volumes:
+      - ./etc/bind:/etc/bind
+      - ./var/cache/bind:/var/cache/bind
+      - ./var/log:/var/log
+    environment:
+      - TZ=Europe/Madrid
+      - BIND9_USER=root
+    restart: unless-stopped
+
