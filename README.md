@@ -102,7 +102,7 @@ Este repositorio contén un arquivo `docker compose.yml` para lanzar un contedor
    ```bash
    docker compose down
    ```
-```
+
 
 ### Enlace ao repositorio
 
